@@ -14,6 +14,7 @@ export const StyledTh = styled.th`
     text-transform: capitalize;
     font-weight: 600;
     font-size: 14px;
+    cursor: pointer;
 
 `
 

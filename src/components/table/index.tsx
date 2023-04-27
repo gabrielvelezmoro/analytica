@@ -1,27 +1,55 @@
+import { useEffect, useState } from "react"
 import { StyledTable, StyledTh, StyledTd } from "./styles"
+
 
 export interface ITable {
     rows:  any [] | React.ReactNode[]
 }
 
 export default function Table({rows}: ITable) {
-  console.log('dentro do componente: ', rows[0])
+ const [rowOrder, setRowOrder] = useState<any>([]);
+const [direction, setDirection] = useState('asc')
+
+ useEffect(() => {
+     console.log(rows)
+    setRowOrder(rows[0]);
+  }, []);
+
+ function order(value: string){
+    if (direction === 'asc'){
+        const sorted = [...rowOrder].sort((a,b) => 
+        (a[value] === b[value] ? 0 : a[value] ===
+           undefined ? -1 : b === undefined ? -1 : a[value] > b[value] ? 1: -1)
+           )  
+        setDirection('desc')
+        setRowOrder(sorted);
+    }
+    else{
+        const sorted = [...rowOrder].sort((a,b) => 
+        (a[value] === b[value] ? 0 : a[value] ===
+           undefined ? -1 : b === undefined ? -1 : a[value] < b[value] ? 1: -1)
+           )  
+        setDirection('asc')
+        setRowOrder(sorted);
+    
+    }
+ }
+
     return (
     <>
       <StyledTable>
           <tr>
-            <StyledTh>Name</StyledTh>
-            <StyledTh>Type</StyledTh>
-            <StyledTh>HP</StyledTh>
-            <StyledTh>Attack</StyledTh>
-            <StyledTh>Defense</StyledTh>
-            <StyledTh>Sp.Attack</StyledTh>
-            <StyledTh>Sp.Defense</StyledTh>
-            <StyledTh>Speed</StyledTh>
-            <StyledTh>Total</StyledTh>
+            <StyledTh onClick={(()=>{order('name')})}>Name</StyledTh>
+            <StyledTh onClick={(()=>{order('type')})}>Type</StyledTh>
+            <StyledTh onClick={(()=>{order('hp')})}>HP</StyledTh>
+            <StyledTh onClick={(()=>{order('attack')})}>Attack</StyledTh>
+            <StyledTh onClick={(()=>{order('defense')})}>Defense</StyledTh>
+            <StyledTh onClick={(()=>{order('spAttack')})}>Sp.Attack</StyledTh>
+            <StyledTh onClick={(()=>{order('spDefense')})}>Sp.Defense</StyledTh>
+            <StyledTh onClick={(()=>{order('speed')})}>Speed</StyledTh>
+            <StyledTh onClick={(()=>{order('total')})}>Total</StyledTh>
           </tr>
-           { rows[0].map((row: any) => {
-               console.log(row.name)
+           { rowOrder?.map((row: any) => {
            return (
                
                <tr>
