@@ -1,18 +1,123 @@
-export const data = [
+export const pokedata = [
     {
-      "Country Name": "Afghanistan",
-      Capital: "Kabul",
-      Currency: "Afghani"
+      id: 1,
+      name: 'Blastoise' ,
+      type: 'Water',
+      hp: 79,
+      attack: 83,
+      defense: 100,
+      spAttack: 85,
+      spDefense: 105,
+      speed: 78,
+      total: 530
     },
     {
-      "Country Name": "Albania",
-      Capital: "Tirane",
-      Currency: "Lek"
+      id: 2,
+      name: 'Bulbasaur' ,
+      type: 'Grass',
+      hp: 45,
+      attack: 49,
+      defense: 49,
+      spAttack: 65,
+      spDefense: 65,
+      speed: 45,
+      total: 318
     },
     {
-      "Country Name": "Algeria",
-      Capital: "Algiers",
-      Currency: "Dinar"
-    }
+      id: 3,
+      name: 'Caterpie' ,
+      type: 'Bug',
+      hp: 45,
+      attack: 30,
+      defense: 35,
+      spAttack: 20,
+      spDefense: 20,
+      speed: 45,
+      total: 195
+    },
+    {
+      id: 4,
+      name: 'Charizard' ,
+      type: 'Fire',
+      hp: 78,
+      attack: 84,
+      defense: 79,
+      spAttack: 109,
+      spDefense: 75,
+      speed: 100,
+      total: 534
+    },
+    {
+      id: 5,
+      name: 'Charmander' ,
+      type: 'Fire',
+      hp: 39,
+      attack: 52,
+      defense: 43,
+      spAttack: 60,
+      spDefense: 50,
+      speed: 65,
+      total: 309
+    },
+    {
+      id: 6,
+      name: 'Charmeleon' ,
+      type: 'Fire',
+      hp: 58,
+      attack: 64,
+      defense: 58,
+      spAttack: 80,
+      spDefense: 65,
+      speed: 80,
+      total: 405
+    },
+    {
+      id: 7,
+      name: 'Ivysaur' ,
+      type: 'Grass',
+      hp: 60,
+      attack: 62,
+      defense: 63,
+      spAttack: 80,
+      spDefense: 80,
+      speed: 60,
+      total: 405
+    },
+    {
+      id: 8,
+      name: 'Squirtle' ,
+      type: 'Water',
+      hp: 44,
+      attack: 48,
+      defense: 65,
+      spAttack: 50,
+      spDefense: 64,
+      speed: 43,
+      total: 314
+    },
+    {
+      id: 9,
+      name: 'Venusaur' ,
+      type: 'Grass',
+      hp: 80,
+      attack: 82,
+      defense: 83,
+      spAttack: 100,
+      spDefense: 100,
+      speed: 80,
+      total: 525
+    },
+    {
+      id: 10,
+      name: 'Wartortle' ,
+      type: 'Water',
+      hp: 59,
+      attack: 63,
+      defense: 80,
+      spAttack: 65,
+      spDefense: 80,
+      speed: 58,
+      total: 405
+    },
   ];
   

@@ -1,15 +1,12 @@
-import { useState } from 'react'
 import Table from './components/table'
 import './App.css'
-
+import { pokedata } from './data';
 
 function App() {
 
-
   return (
     <>
-      
-    <Table/>
+      <Table rows={[pokedata]}/> 
     </>
   )
 }

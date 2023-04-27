@@ -8,10 +8,6 @@ export const StyledTable = styled.table`
     background-color: #1C1C1C;
 `
 
-export const StyledTr = styled.tr`
-  
-`
-
 export const StyledTh = styled.th`
     font-weight: normal;
     padding: 10px;

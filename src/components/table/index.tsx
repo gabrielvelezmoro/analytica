@@ -1,13 +1,15 @@
-import { StyledTable, StyledTh, StyledTr, StyledTd } from "./styles"
+import { StyledTable, StyledTh, StyledTd } from "./styles"
 
+export interface ITable {
+    rows:  any [] | React.ReactNode[]
+}
 
-
-
-function Table() {
-  return (
+export default function Table({rows}: ITable) {
+  console.log('dentro do componente: ', rows[0])
+    return (
     <>
       <StyledTable>
-          <StyledTr>
+          <tr>
             <StyledTh>Name</StyledTh>
             <StyledTh>Type</StyledTh>
             <StyledTh>HP</StyledTh>
@@ -17,120 +19,27 @@ function Table() {
             <StyledTh>Sp.Defense</StyledTh>
             <StyledTh>Speed</StyledTh>
             <StyledTh>Total</StyledTh>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Blastoise</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Bulbasaur</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Caterpie</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Charizard</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Charmander</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Charmeleon</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Ivysaur</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Squirtle</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Venusaur</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
-          <StyledTr>
-            <StyledTd>Wartortle</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-            <StyledTd>79</StyledTd>
-          </StyledTr>
+          </tr>
+           { rows[0].map((row: any) => {
+               console.log(row.name)
+           return (
+               
+               <tr>
+                <StyledTd> {row.name} </StyledTd>
+                <StyledTd> {row.type} </StyledTd>
+                <StyledTd> {row.hp} </StyledTd>
+                <StyledTd> {row.attack} </StyledTd>
+                <StyledTd> {row.defense} </StyledTd>
+                <StyledTd> {row.spAttack} </StyledTd>
+                <StyledTd> {row.spDefense} </StyledTd>
+                <StyledTd> {row.speed} </StyledTd>
+                <StyledTd> {row.total} </StyledTd>
+              
+                </tr>
+                )
+            })}
       </StyledTable> 
     </>
   )
 }
 
-export default Table
